@@ -1,0 +1,20 @@
+<div class="btn-box">
+    <a routerLink="new" class="btn-create">
+        <svg height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+
+    </a>
+</div>
+<div class="user-list">
+    <ng-container *ngIf="users?.length; else nothing">
+        <div class="user" *ngFor="let user of users" [routerLink]="user.id">
+            <p>{{user.name}} | {{user.age}}</p>
+            <p>{{user.mail}}</p>
+        </div>
+    </ng-container>
+    <ng-template #nothing>
+        <p>No data found</p>
+    </ng-template>
+</div>

@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": "f49e",
+      "name": "Vignesh M",
+      "age": 23,
+      "mail": "vignesh@gmail.com"
+    },
+    {
+      "id": "39ea",
+      "name": "Dinesh M",
+      "age": 19,
+      "mail": "dinesh@gmail.com"
+    },
+    {
+      "name": "Vikram S",
+      "age": "19",
+      "mail": "vikram@gmail.com",
+      "id": "bf8c"
+    },
+    {
+      "id": "5a6d",
+      "name": "Subash S",
+      "age": 23,
+      "mail": "subash@gmail.com"
+    }
+  ]
+}

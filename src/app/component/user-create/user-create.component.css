@@ -1,0 +1,12 @@
+.user-form {
+    margin: 10px auto;
+    /* border: 1px solid salmon; */
+    width: 350px;
+    border: 1px solid #c7c7c7;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.user-form form {
+    padding-top: 20px;
+}

@@ -1,0 +1,58 @@
+<div class="user-form">
+    <div>
+        <h3 style="text-align: center; margin-bottom: 20px;">User Create</h3>
+        <hr style="border: 1px solid #c7c7c7; border-bottom: none;">
+    </div>
+    <form #form="ngForm" *ngIf="user">
+        <label>
+            <span>Name</span>
+            <input type="text" [ngModel]="user.name" required="" name="name" #name="ngModel">
+            <ng-container *ngIf="name.invalid && name.touched">
+                <div *ngIf="name.errors?.['minlength']" style="color: red; font-size: small;">
+                    The min length is 5.
+                </div>
+                <div *ngIf="name.errors?.['required']" style="color: red; font-size: small">
+                    The name is required.
+                </div>
+            </ng-container>
+        </label>
+        <label>
+            <span>Age</span>
+            <input type="number" [ngModel]="user.age" required name="age" #age="ngModel">
+            <ng-container *ngIf="age.invalid && age.touched">
+                <div *ngIf="age.errors?.['required']" style="color: red; font-size: small">
+                    The age is required.
+                </div>
+            </ng-container>
+        </label>
+        <label>
+            <span>Mail</span>
+            <input type="email" [ngModel]="user.mail" required name="mail" #mail="ngModel" email>
+            <!-- <pre>
+            {{mail.errors| json}}
+            </pre> -->
+            <ng-container *ngIf="mail.invalid && mail.touched">
+                <div *ngIf="mail.errors?.['required']" style="color: red; font-size: small">
+                    The mail is required.
+                </div>
+                <div *ngIf="mail.errors?.['email']" style="color: red; font-size: small">
+                    Invalid mail.
+                </div>
+
+            </ng-container>
+        </label>
+        <!-- <div class="pre">
+            <pre>{{form.value|json}}</pre>
+        </div> -->
+        <div [align]="'center'" style="padding: 20px 20px 10px 20px;">
+            <button *ngIf="!isEdit" (click)="handleCreate(form)" type="button" class="btn"
+                style="margin-bottom: 10px;">Create</button>
+            <button *ngIf="isEdit" (click)="handleUpdate(form)" type="button" class="btn"
+                style="margin-bottom: 10px;">Update</button>
+            <button *ngIf="isEdit" (click)="handleDelete(form)" type="button" class="btn"
+                style="margin-bottom: 10px;">Delete</button>
+            <button (click)="form.resetForm()" *ngIf="form.touched || isEdit" type="button" class="btn">Reset</button>
+            <!-- <button type="submit" class="btn">Submit</button> -->
+        </div>
+    </form>
+</div>

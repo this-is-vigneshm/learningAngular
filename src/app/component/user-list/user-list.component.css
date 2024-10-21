@@ -1,0 +1,29 @@
+.btn-box {
+    width: 350px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.btn-create {
+    /* border: 1px solid #c7c7c7; */
+    background-color: #4caf50;
+    text-decoration: none;
+    padding: 10px 10px;
+    /* width: 175px; */
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-create:hover {
+    background-color: #329b36;
+}
+
+.btn-create svg {
+    height: 20px;
+    margin-left: 5px;
+    stroke: #fff;
+    stroke-width: 3px;
+}
