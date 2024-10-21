@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { PracticeService } from '../../service/practice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-single',
@@ -11,7 +12,7 @@ export class UserSingleComponent implements OnInit {
 
   users!: User[];
 
-  constructor(private practiceService: PracticeService) { }
+  constructor(private practiceService: PracticeService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -20,14 +21,14 @@ export class UserSingleComponent implements OnInit {
   createUser(userObj: User) {
     this.practiceService
       .createUser(userObj)
-      .subscribe(() => console.log('User created successfully..!'));
+      .subscribe((res) => this.router.navigate(['admin', 'users', res.id]));
   }
 
   updateUser(userObj: User) {
     this.practiceService
       .updateUser(userObj)
       .subscribe({
-        next: (res) => console.log('User updated successfully..!', res),
+        next: (res) => this.router.navigate(['admin']),
         error: (err) => console.log('Error', err)
       }
       );
@@ -36,6 +37,6 @@ export class UserSingleComponent implements OnInit {
   deleteUser(userObj: User) {
     this.practiceService
       .deleteUser(userObj)
-      .subscribe(() => console.log('User deleted successfully..!'));
+      .subscribe(() => this.router.navigate(['admin']));
   }
 }
