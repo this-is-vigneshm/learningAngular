@@ -7,22 +7,20 @@ import { User } from './models/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   title = 'learningAngular';
-  learn: boolean = true
+  learn: boolean = true;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.learn = localStorage.getItem('work') === 'true';
   }
 
-
-
   changeWorkspace() {
-    this.learn = !this.learn
+    this.learn = !this.learn;
     localStorage.setItem('work', String(this.learn));
   }
 

@@ -6,26 +6,20 @@ import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-
 export const routes: Routes = [
   { path: 'users', component: UserListComponent },
-  { path: 'users/new', component: UserSingleComponent, data: { isEdit: false } },
+  {
+    path: 'users/new',
+    component: UserSingleComponent,
+    data: { isEdit: false },
+  },
   { path: 'users/:id', component: UserSingleComponent, data: { isEdit: true } },
-  { path: '', pathMatch: 'full', redirectTo: 'users' }
-]
-
+  { path: '', pathMatch: 'full', redirectTo: 'users' },
+];
 
 @NgModule({
-  declarations: [
-    UserSingleComponent,
-    UserCreateComponent,
-    UserListComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: []
+  declarations: [UserSingleComponent, UserCreateComponent, UserListComponent],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  exports: [],
 })
-export class UserModule { }
+export class UserModule {}
