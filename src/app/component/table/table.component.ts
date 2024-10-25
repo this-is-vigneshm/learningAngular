@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-table',
+  selector: 'ez-table',
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })

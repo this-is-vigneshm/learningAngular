@@ -10,7 +10,6 @@ import { TableComponent } from './component/table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent,
   ],
   imports: [
     BrowserModule,

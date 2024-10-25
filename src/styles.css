@@ -110,3 +110,26 @@ form .ng-invalid.ng-touched:focus {
 .user-list .user:hover {
     background-color: #f1f1f1;
 }
+
+table {
+    margin: 10px auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    /* width: 350px; */
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px 10px;
+    min-width: 150px;
+    font-size: 12px;
+}
+
+
+td:first-child {}
+
+/* tr:nth-child(even) {
+    background-color: #dddddd;
+} */

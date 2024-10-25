@@ -18,3 +18,26 @@
         <p>No data found</p>
     </ng-template>
 </div>
+
+<ez-table>
+    <thead head>
+        <tr>
+            <th>SNo.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody body>
+        <ng-container *ngFor="let user of users let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.mail}}</td>
+                <td><a style="color: rgb(0, 106, 255);" [routerLink]="user.id">Edit</a></td>
+            </tr>
+        </ng-container>
+    </tbody>
+</ez-table>

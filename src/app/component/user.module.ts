@@ -5,6 +5,7 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { TableComponent } from './table/table.component';
 
 export const routes: Routes = [
   { path: 'users', component: UserListComponent },
@@ -18,8 +19,8 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [UserSingleComponent, UserCreateComponent, UserListComponent],
+  declarations: [UserSingleComponent, UserCreateComponent, UserListComponent, TableComponent],
   imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
   exports: [],
 })
-export class UserModule {}
+export class UserModule { }
